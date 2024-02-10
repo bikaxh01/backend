@@ -10,6 +10,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors())
 
+app.get('/',(req,res)=>{
+  res.json({
+    msg: "Your server is running"
+  })
+})
 app.post("/signup", async (req, res) => {
   // signup Route
   const username = req.headers.username;
